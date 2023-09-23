@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  /* font-weight: bold; */
+}
+body {
+  background-color: #ccc;
+}
+.container {
+  width: 300px;
+  box-shadow: 9px 8px 20px 0px #000000a8;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: #837773;
+  color: white;
+}
+h1 {
+  padding: 10px;
+}
+.calc {
+  border: 1px white solid;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  row-gap: 5px;
+  padding: 5px 0px;
+  position: relative;
+}
+#results {
+  width: 100%;
+  text-align: right;
+  font-size: 30px;
+  height: 100px;
+  padding: 0px 10px;
+  border: none;
+  background-color: #837773;
+  color: white;
+}
+#results:focus {
+  outline: none;
+}
+#results:hover {
+  cursor: context-menu;
+}
+.controls,
+.number {
+  width: calc(90% / 4);
+  height: 50px;
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* font-size: 17px; */
+  border: 2px solid black;
+}
+.controls {
+  background-color: rgb(198, 196, 196);
+  color: black;
+}
+.number {
+  background-color: #363636c7;
+  color: rgb(255, 255, 255);
+}
+#eq {
+  background-color: #900;
+  color: white;
+}
+.controls:active,
+.number:active {
+  transform: scale(0.9);
+}
+.controls:hover,
+.number:hover {
+  border: 1px solid white;
+  cursor: pointer;
+}
+.controls sup {
+  font-size: x-small;
+}
+#neg {
+  width: calc(90% / 4);
+  height: 50px;
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* font-size: 17px; */
+  border: 2px solid black;
+  background-color: #363636c7;
+  color: rgb(255, 255, 255);
+}
+#neg:active {
+  transform: scale(0.9);
+}
+#neg:hover {
+  border: 1px solid white;
+  cursor: pointer;
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.head img {
+  width: 40px;
+  height: 40px;
+}
+.sv {
+  position: absolute;
+  display: none;
+  top: 0;
+  right: 0;
+  width: 80%;
+  height: 100%;
+  z-index: 100;
+  padding: 10px;
+  background-color: #000000c7;
+  color: white;
+  text-align: left;
+  transition: 0.5s;
+}
+.reveal {
+  display: block;
+  animation-name: show;
+  animation-duration: 0.3s;
+}
+.hidden {
+  display: none;
+  animation-name: hide;
+  animation-duration: 0.3s;
+}
+@keyframes show {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 80%;
+  }
+}
+@keyframes hide{
+  from {
+    width: 80%;
+  }to{
+    width: 0px;
+  }
+}
